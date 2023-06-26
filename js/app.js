@@ -24,7 +24,7 @@ function domCargado() {
     componentItems = document.getElementsByClassName("component");
     componentContainer = document.getElementById("container");
     total = document.getElementById("total");
-    console.dir(total);
+
     // Eventos del D&D (Drag & Drop)
     for (let item of componentItems) {
         item.addEventListener('dragstart', (event) => {
@@ -40,7 +40,7 @@ function domCargado() {
     });
 
     componentContainer.addEventListener('drop', (event) => {
-        var mensajeInicialCarrito = componentContainer.querySelector("#mensajeInicial");
+        mensajeInicialCarrito = componentContainer.querySelector("#mensajeInicial");
         if (mensajeInicialCarrito) {
             componentContainer.removeChild(mensajeInicialCarrito);
             componentContainer.style.padding = "10px";
@@ -60,6 +60,7 @@ function domCargado() {
     });
 
     componentContainer.addEventListener('click', (event) => {
+        mensajeInicialCarrito = componentContainer.querySelector("#mensajeInicial");
         trashButtons = document.getElementsByClassName("fa-solid fa-trash");
         if (event.target.classList.contains("fa-trash")) {
             var componentShoppingCart = event.target.closest(".componentShoppingCart");
@@ -68,7 +69,7 @@ function domCargado() {
             componentShoppingCart.parentNode.removeChild(componentShoppingCart);
             total.textContent = `Total: ${sumatorio.toFixed(2)}€`;
         }
-        if (componentContainer.querySelectorAll('.componentShoppingCart').length === 0) {
+        if (componentContainer.querySelectorAll('.componentShoppingCart').length === 0 && !mensajeInicialCarrito) {
             restablecerMensajeInicialCarrito();
         }
     });
