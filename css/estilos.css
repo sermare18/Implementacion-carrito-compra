@@ -1,0 +1,103 @@
+body {
+    background-color: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    display: flex;
+}
+
+header {
+    background-color: #009F9A;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #000;
+}
+
+footer {
+    background-color: #009F9A;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 30pxeso;
+}
+
+/* Clases */
+.left,
+.right {
+    width: 50%;
+}
+
+.right {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.sectioncomputer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    margin: 10px 5px 10px 5px;
+    gap: 15px;
+}
+
+.component {
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #000;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: white;
+}
+
+.componentShoppingCart {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: solid 1px #000;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.componentShoppingCart i {
+    margin-left: auto;
+}
+
+/* IDs */
+#shopping-cart-title {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: dashed 2px #000;
+    padding: 100px 10px 100px 10px;
+    margin-right: 40px;
+}
+
+#total {
+    font-weight: 500;
+}
