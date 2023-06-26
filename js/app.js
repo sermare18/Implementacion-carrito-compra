@@ -28,6 +28,7 @@ function domCargado() {
     // Eventos del D&D (Drag & Drop)
     for (let item of componentItems) {
         item.addEventListener('dragstart', (event) => {
+            event.dataTransfer.effectAllowed = "copy";
             component = event.target;
             name = component.querySelector(".name").textContent;
             price = component.querySelector(".price").textContent;
@@ -37,6 +38,7 @@ function domCargado() {
 
     componentContainer.addEventListener('dragover', (event) => {
         event.preventDefault();
+        event.dataTransfer.dropEffect = "copy";
     });
 
     componentContainer.addEventListener('drop', (event) => {
